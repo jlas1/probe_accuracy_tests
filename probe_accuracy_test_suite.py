@@ -365,7 +365,11 @@ class Printer:
                         x_offset = self.config["beacon"].get("x_offset", 0)
                         y_offset = self.config["beacon"].get("y_offset", 0)
                     except:
-                            pass
+                        try:
+                            x_offset = self.config["dockable_probe"].get("x_offset", 0)
+                            y_offset = self.config["dockable_probe"].get("y_offset", 0)
+                        except:
+                                pass
 
 
         # print(f"x_offset{x_offset}\ny_offset{y_offset}")
